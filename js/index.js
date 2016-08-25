@@ -1,7 +1,7 @@
 (function($, navigator, Handlebars) {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-      .register('sw.js', { scope: '/' })
+      .register('sw.js')
       .then(() => { console.log("Holy service worker registration, Batman."); });
   }
 
