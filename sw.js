@@ -1,17 +1,17 @@
 var cacheName = 'pow-v14';
 var filesToCache = [
-  "/bower_components/bootstrap/dist/css/bootstrap.min.css",
-  "/bower_components/bootstrap/dist/css/bootstrap-theme.min.css",
-  "/bower_components/jquery/dist/jquery.min.js",
-  "/bower_components/bootstrap/dist/js/bootstrap.min.js",
-  "/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2",
-  "/bower_components/handlebars/handlebars.min.js",
-  "/js/index.js",
-  "/data/speakers.json",
-  "/speakers.html",
-  "/programme.html",
-  "/venue.html",
-  "/index.html"
+  "bower_components/bootstrap/dist/css/bootstrap.min.css",
+  "bower_components/bootstrap/dist/css/bootstrap-theme.min.css",
+  "bower_components/jquery/dist/jquery.min.js",
+  "bower_components/bootstrap/dist/js/bootstrap.min.js",
+  "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2",
+  "bower_components/handlebars/handlebars.min.js",
+  "js/index.js",
+  "data/speakers.json",
+  "speakers.html",
+  "programme.html",
+  "venue.html",
+  "index.html"
 ];
 
 self.addEventListener('install', function(e) {
