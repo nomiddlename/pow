@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>POW Conference 2016</title>
+
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 70px;
+        padding-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1>Speakers</h1>
+      </div>
+      <div data-renderer="speakers" data-url="/data/speakers.json" data-template="#template">
+      </div>
+    </div>
+    <script type="text/x-handlebars-template" id="template">
+      {{#each speakers}}
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">{{name}}</h2>
+          <span class="panel-subtitle">{{role}}</span>
+        </div>
+        <div class="panel-body">
+          <p>{{bio}}</p>
+          <p><a href="https://twitter.com/{{speaker.twitter}}">@{{twitter}}</a></p>
+        </div>
+      </div>
+      {{/each}}
+    </script>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topnav" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="glyphicon glyphicon-menu-hamburger"></span>
+          </button>
+          <a class="navbar-brand" href="/">POW! Conference</a>
+        </div>
+        <div id="topnav" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/speakers.html">Speakers</a></li>
+            <li><a href="/programme.html">Programme</a></li>
+            <li><a href="/venue.html">Venue</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+        <p class="navbar-text navbar-right">&copy; 2016 POW! Conference</p>
+      </div>
+    </nav>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/handlebars/handlebars.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

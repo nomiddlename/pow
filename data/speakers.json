@@ -1,0 +1,64 @@
+[
+  {
+    "name": "Bruce Wayne",
+    "role": "CEO, Wayne Enterprises",
+    "bio": "As the CEO of Wayne Enterprises, Bruce likes money. He is also definitely not Batman.",
+    "twitter": "brucewayneceo",
+    "talks": [
+      {
+        "title": "The importance of good insurance",
+        "track": 1,
+        "time": "10:00",
+        "description": "Bruce will discuss how he makes sure the insurance policies that cover his buildings include cover for damage caused by superheroes, and gives some tips on negotiating with insurers that may apply even if you're not a world-class businessman."
+      }
+    ]
+  },
+  {
+    "name": "Batman",
+    "role": "Batman",
+    "bio": "Batman is Batman. Not Bruce Wayne. He's never even heard of him.",
+    "twitter": "batman",
+    "talks": [
+      {
+        "title": "Building a secret underground lair, secretly",
+        "track": 2,
+        "time": "10:00",
+        "description": "Everybody wants a secret underground lair these days, they're so hot right now. But how does one get the right planning permission, and what construction skills do you need when there's only you and your butler to do it all."
+      },
+      {
+        "title": "Punching bad people",
+        "track": 2,
+        "time": "12:00",
+        "description": "How to punch bad people without killing them. But still punching them. A lot."
+      }
+    ]
+  },
+  {
+    "name": "Dr Bruce Banner",
+    "role": "Scientist",
+    "bio": "Bruce enjoys yoga, relaxing, long walks on the beach, and nuclear radiation.",
+    "twitter": "drbrucebanner",
+    "talks": [
+      {
+        "title": "Gamma rays for fun and profit",
+        "track": 1,
+        "time": "11:00",
+        "description": "Gamma radiation has a bad rap these days, but there are plenty of ways to use it safely. Note: some attendees may get irradiated during the demonstration."
+      }
+    ]
+  },
+  {
+    "name": "Hulk",
+    "role": "Smasher",
+    "bio": "Hulk not have bio.",
+    "twitter": "hulk",
+    "talks": [
+      {
+        "title": "SMASH",
+        "track": 2,
+        "time": "11:00",
+        "description": "Hulk show puny humans how to smash. Hulk remember not to smash puny humans. Not like last time."
+      }
+    ]
+  }
+]
