@@ -1,4 +1,4 @@
-var cacheName = 'pow-v15';
+var cacheName = 'pow-v16';
 var filesToCache = [
   "bower_components/bootstrap/dist/css/bootstrap.min.css",
   "bower_components/bootstrap/dist/css/bootstrap-theme.min.css",
