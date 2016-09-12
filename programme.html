@@ -23,6 +23,21 @@
       </div>
       <div data-renderer="programme" data-url="data/speakers.json" data-template="#template">
       </div>
+      <div>
+        <p>
+          <button
+            id="subscribe"
+            type="button"
+            class="btn btn-primary"
+            data-toggle="button"
+            aria-pressed="false"
+            autocomplete="off"
+            data-unsub-text="Turn off schedule change notices"
+            data-sub-text="Tell me if the schedule changes">
+            Tell me if the schedule changes
+          </button>
+        </p>
+      </div>
     </div>
     <script type="text/x-handlebars-template" id="template">
       {{#each tracks}}

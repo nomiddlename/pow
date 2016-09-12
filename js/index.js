@@ -2,7 +2,23 @@
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
       .register('sw.js')
-      .then(() => { console.log("Holy service worker registration, Batman."); });
+      .then((reg) => {
+        console.log("Holy service worker registration, Batman.");
+        registration = reg;
+
+        return registration.pushManager.getSubscription();
+      }).then((sub) => {
+        if (sub) {
+          console.log("Already subscribed to notifications, Batman: ", sub);
+          console.log("bat-client-key is ",
+            btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('p256dh'))))
+          );
+          console.log("bat-client-auth-secret is ",
+            btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('auth'))))
+          );
+          enableSubscriptionButton();
+        }
+      });
   }
 
   $(() => {
@@ -18,7 +34,45 @@
         item.append(fn(template, data));
       });
     });
+
+
+    $('#subscribe').click(function() {
+      if ($(this).hasClass('active')) {
+        //unsubscribe from notifications
+        console.log("I should unsubscribe now.");
+        navigator.serviceWorker.ready.then((reg) => {
+          reg.pushManager.getSubscription().then((sub) => {
+            if (sub) {
+              console.log("In a real app, we'd remove the subscription from the server");
+              sub.unsubscribe().then(() => {
+                $(this).button("sub");
+              });
+            }
+          });
+        });
+      } else {
+        //subscribe to notifications
+        console.log("I should subscribe now.");
+        navigator.serviceWorker.ready.then((reg) => {
+          reg.pushManager.subscribe( { userVisibleOnly: true }).then((sub) => {
+            console.log("Holy subscription, Batman: ", sub);
+            console.log("bat-client-key is ",
+              btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('p256dh'))))
+            );
+            console.log("bat-client-auth-secret is ",
+              btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('auth'))))
+            );
+            console.log("In a real app, we'd record the subscription in our server");
+            $(this).button("unsub");
+          });
+        });
+      }
+    });
   });
+
+  function enableSubscriptionButton() {
+    $('#subscribe').addClass('active').button('unsub');
+  }
 
   let renderers = {
     speakers: function(template, data) {

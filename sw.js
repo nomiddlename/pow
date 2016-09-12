@@ -1,4 +1,4 @@
-var cacheName = 'pow-v19';
+var cacheName = 'pow-v29';
 var filesToCache = [
   "bower_components/bootstrap/dist/css/bootstrap.min.css",
   "bower_components/bootstrap/dist/css/bootstrap-theme.min.css",
@@ -20,7 +20,7 @@ self.addEventListener('install', function(e) {
     caches.open(cacheName).then(function(cache) {
       console.log('Initialising bat-cache ', cacheName);
       return cache.addAll(filesToCache);
-    })
+    }).then(() => { return self.skipWaiting(); })
   );
 });
 
@@ -50,5 +50,19 @@ self.addEventListener('fetch', function(e) {
         return response || fetch(e.request);
       });
     })
+  );
+});
+
+self.addEventListener('push', function(e) {
+  console.log('Holy push event, Batman!', e);
+  console.log("Bat-push-message was ", e.data.json());
+  e.waitUntil(
+    self.registration.showNotification(
+      "Schedule change",
+      {
+        body: e.data.json().message,
+        icon: "images/logo.png"
+      }
+    )
   );
 });
