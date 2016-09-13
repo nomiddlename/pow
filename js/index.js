@@ -54,16 +54,18 @@
         //subscribe to notifications
         console.log("I should subscribe now.");
         navigator.serviceWorker.ready.then((reg) => {
-          reg.pushManager.subscribe( { userVisibleOnly: true }).then((sub) => {
-            console.log("Holy subscription, Batman: ", sub);
-            console.log("bat-client-key is ",
-              btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('p256dh'))))
-            );
-            console.log("bat-client-auth-secret is ",
-              btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('auth'))))
-            );
-            console.log("In a real app, we'd record the subscription in our server");
-            $(this).button("unsub");
+          Notification.requestPermission().then(() => {
+            reg.pushManager.subscribe( { userVisibleOnly: true }).then((sub) => {
+              console.log("Holy subscription, Batman: ", sub);
+              console.log("bat-client-key is ",
+                btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('p256dh'))))
+              );
+              console.log("bat-client-auth-secret is ",
+                btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('auth'))))
+              );
+              console.log("In a real app, we'd record the subscription in our server");
+              $(this).button("unsub");
+            });
           });
         });
       }
