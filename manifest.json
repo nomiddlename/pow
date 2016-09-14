@@ -1,9 +1,10 @@
 {
   "name": "POW! Conference 2016",
   "short_name": "POW! 2016",
-  "start_url": "/pow/",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "white",
+  "theme_color": "white",
   "description": "Schedules and speakers for the exciting POW! Conference 2016",
   "icons": [
     { "src": "images/logo.png", "sizes": "192x192", "type": "image/png" }
